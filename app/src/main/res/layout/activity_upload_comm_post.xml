@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".upload_comm_post">
+
+    <ImageButton
+        android:id="@+id/upload_comm_back"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+        android:scaleType="fitXY"
+        android:backgroundTint="#00ff0000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/upload_comm_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text="우리동네 생활 글쓰기"
+        android:textSize="24sp"
+        android:layout_marginTop="17.5dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/upload_comm_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="완료"
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#00ff0000"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <View
+        android:id="@+id/upload_comm_view1"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="#7E7D7D"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/upload_comm_spinner"
+        android:layout_marginTop="15dp"/>
+
+    <Spinner
+        android:id="@+id/upload_comm_spinner"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/upload_comm_view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_view1" />
+
+    <View
+        android:id="@+id/upload_comm_view2"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="#7E7D7D"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/upload_comm_title"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/upload_comm_title"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/shape_edittext"
+        android:hint="제목"
+        android:padding="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_spinner" />
+
+    <EditText
+        android:id="@+id/upload_comm_content"
+        android:layout_width="360dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_edittext"
+        android:gravity="top"
+        android:padding="7dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_title" />
+
+    <ImageButton
+        android:id="@+id/upload_comm_images"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="84dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_photo_camera_24"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_content"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/upload_comm_image_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31.2dp"
+        android:text="0 / 10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_images"
+        android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/upload_comm_images_rv"
+        android:layout_width="330dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/upload_comm_images"
+        app:layout_constraintTop_toBottomOf="@id/upload_comm_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_constraint"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".comm_post_read">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/comm_read_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_linear_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/comm_read_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/comm_read_back"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="#00ff0000"
+                android:scaleType="fitXY"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/comm_read_menu"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#00ff0000"
+                android:src="@drawable/ic_baseline_dehaze_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <TextView
+                android:id="@+id/comm_read_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/tv_radius"
+                android:backgroundTint="@color/blue"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginTop="40dp"
+                android:text="category"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@id/comm_read_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"  />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/comm_read_profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toTopOf="@id/comm_read_view1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/comm_read_linear"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                android:weightSum="2"
+                app:layout_constraintBottom_toTopOf="@id/comm_read_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="110dp">
+
+                <TextView
+                    android:id="@+id/comm_read_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="username"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/comm_read_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="area"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/comm_read_view1"
+                android:layout_width="380dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:background="#9F9F9F"
+                app:layout_constraintBottom_toTopOf="@+id/comm_read_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comm_read_linear" />
+
+            <TextView
+                android:id="@+id/comm_read_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:paddingBottom="15dp"
+                android:text="제목"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/comm_read_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comm_read_view1" />
+
+
+            <TextView
+                android:id="@+id/comm_read_content"
+                android:layout_width="380dp"
+                android:layout_height="100dp"
+                android:height="1000dp"
+                android:paddingLeft="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/comm_read_vp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comm_read_title"
+                android:textColor="@color/black"/>
+
+            <FrameLayout
+                android:id="@+id/comm_read_frame"
+                android:layout_width="380dp"
+                android:layout_height="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comm_read_content"
+                android:visibility="gone">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/comm_read_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/comm_read_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/comm_read_indicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/comm_read_frame"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/comm_read_numbers"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:weightSum="2"
+                app:layout_constraintBottom_toTopOf="@+id/comm_read_buttons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comm_read_frame">
+
+                <TextView
+                    android:id="@+id/hidden_hit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="조회수" />
+                <TextView
+                    android:id="@+id/hidden_hit_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/comm_read_view2"
+                android:layout_width="380dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#BCBCBC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comm_read_numbers" />
+
+            <ToggleButton
+                android:id="@+id/comm_read_like_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_weight="0.5"
+                android:backgroundTint="#00ff0000"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comm_read_view2" />
+
+            <TextView
+                android:id="@+id/comm_read_like_num"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="num"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/comm_read_like_btn"
+                app:layout_constraintTop_toBottomOf="@id/comm_read_view2" />
+
+            <ImageButton
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="5dp"
+                android:background="#00ff0000"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_chat_bubble_outline_24"
+                app:layout_constraintRight_toLeftOf="@+id/comm_read_reply_num"
+                app:layout_constraintTop_toBottomOf="@id/comm_read_view2" />
+
+            <TextView
+                android:id="@+id/comm_read_reply_num"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="120dp"
+                android:layout_marginRight="120dp"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comm_read_view2" />
+
+            <View
+                android:id="@+id/comm_read_view3"
+                android:layout_width="380dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#BCBCBC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comm_read_like_num" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comm_read_reply_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/comm_read_view3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/bottom_linear_image"
+                android:nestedScrollingEnabled="false"/>
+
+            <ProgressBar
+                android:id="@+id/comm_read_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/comm_read_reply_rv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_linear_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/comm_read_scroll"
+        app:layout_constraintBottom_toTopOf="@id/bottom_linear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#80DDD9D9"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/reply_frame"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+            <ImageView
+                android:id="@+id/reply_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                android:scaleType="fitXY"
+                android:padding="10dp"/>
+            <ImageButton
+                android:id="@+id/delete_reply_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_cancel_24"
+                android:background="#00ff0000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_gravity="right"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_hidden_linear_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/comm_read_scroll"
+        app:layout_constraintBottom_toTopOf="@id/bottom_hidden_linear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#80DDD9D9"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/hidden_reply_frame"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+            <ImageView
+                android:id="@+id/hidden_reply_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                android:scaleType="fitXY"
+                android:padding="10dp"/>
+            <ImageButton
+                android:id="@+id/delete_hidden_reply_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_cancel_24"
+                android:background="#00ff0000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_gravity="right"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/bottom_hidden_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_hidden_linear_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:background="#838282"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/hidden_reply_tv"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="님에게 댓글 남기는중"
+            android:paddingLeft="15dp"
+            android:textColor="#C3C3C3"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:layout_weight="9"/>
+        <ImageButton
+            android:id="@+id/hidden_reply_delete"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_outline_cancel_24"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#00ff0000"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_hidden_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottom_linear_image"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone">
+
+
+        <ImageButton
+            android:id="@+id/comm_hidden_image_btn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_baseline_photo_camera_24"
+            android:layout_marginLeft="15dp"
+            android:background="#00ff0000"
+            android:scaleType="fitXY"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/comm_hidden_input_reply"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_edittext"
+            android:layout_marginLeft="15dp"
+            android:textSize="13sp"
+            android:paddingLeft="10dp"/>
+
+        <Button
+            android:id="@+id/comm_hidden_reply_submit"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#00ff0000"
+            android:text="전송"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingRight="10dp"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/bottom_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottom_linear_image"
+        android:layout_marginBottom="5dp"
+        >
+
+        <ImageButton
+            android:id="@+id/comm_read_image_btn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_baseline_photo_camera_24"
+            android:layout_marginLeft="15dp"
+            android:background="#00ff0000"
+            android:scaleType="fitXY"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/comm_read_input_reply"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_edittext"
+            android:layout_marginLeft="15dp"
+            android:hint="댓글을 입력해보세요."
+            android:textSize="13sp"
+            android:paddingLeft="10dp"/>
+
+        <Button
+            android:id="@+id/comm_read_reply_submit"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#00ff0000"
+            android:text="전송"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingRight="10dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

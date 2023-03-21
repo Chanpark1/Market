@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="comm_category">
+        <item>동네질문</item>
+        <item>동네사건사고</item>
+        <item>동네맛집</item>
+        <item>취미생활</item>
+        <item>일상</item>
+        <item>분실/실종센터</item>
+        <item>해주세요</item>
+        <item>동네사진전</item>
+    </string-array>
+</resources>

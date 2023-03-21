@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <TextView
+        android:id="@+id/signup_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="휴대폰 번호로 회원가입 해주세요!"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/signup_phone"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/signup_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/shape_edittext"
+        android:hint="휴대폰 번호 (- 없이 숫자만 입력)"
+        android:inputType="number"
+        android:maxLength="11">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/signup_verification"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/signup_phone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="인증문자 받기"
+        android:layout_marginTop="20dp">
+
+    </Button>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/signup_verification"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/signup_lost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="휴대폰 번호가 변경 되었나요?"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/signup_verification"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/signup_find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일로 번호 찾기"
+            android:textColor="#0082EA"
+            app:layout_constraintTop_toBottomOf="@+id/signup_verification"
+            app:layout_constraintLeft_toRightOf="@+id/signup_lost"
+            android:layout_marginLeft="20dp">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/signup_verification_input"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/signup_verification"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/shape_edittext"
+        android:hint="인증번호 입력"
+        android:inputType="number"
+        android:maxLength="6">
+    </EditText>
+
+
+    <Button
+        android:id="@+id/signup_start"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        android:text="동의하고 시작하기"
+        android:textSize="20dp"
+        android:visibility="invisible">
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

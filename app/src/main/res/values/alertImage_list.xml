@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name = "NAL">
+        <item>"앨범 선택"</item>
+        <item>"사진 촬영"</item>
+        <item>"취소"</item>
+    </string-array>
+
+</resources>
