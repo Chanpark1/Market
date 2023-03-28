@@ -201,10 +201,6 @@ public class frag_main extends Fragment {
             }
         }
 
-
-
-
-
         set_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

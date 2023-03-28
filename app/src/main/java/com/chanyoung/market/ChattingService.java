@@ -84,8 +84,6 @@ public class ChattingService extends Service {
 
     public String room_auth;
 
-    public String get_time;
-    SavedSharedPreferences preferences = new SavedSharedPreferences();
     boolean dup = false;
     int id = 0;
     @Nullable
@@ -185,7 +183,7 @@ public class ChattingService extends Service {
             public void run() {
                 super.run();
                 try {
-                    // DataOutputStream 을 통해 문자열이 에코서버로 전송된다 AMAZING
+                    // DataOutputStream 을 통해 문자열이 소켓서버로 전송된다
                     InetAddress serverAddr = InetAddress.getByName(IP);
                     socket = new Socket(serverAddr,PORT); // -> 채팅 서버에 접속 (연결, 에코서버 IP와 포트번호)
                     // 로컬호스트 IP 주소와 포트번호를 인자로 받아서 소켓을 create 하면 해당 에코 서버의 서버소켓과 자동으로 연결이 된다.
@@ -204,7 +202,7 @@ public class ChattingService extends Service {
                     DataInputStream input = null;
 
                     room_auth = intent.getStringExtra("room_auth");
-                    System.out.println("서비스에서 받은 room pk 값 입니다 : " + room_auth);
+                    System.out.println("서비스에서 받은 room pk 값: " + room_auth);
                     input = new DataInputStream(socket.getInputStream());
 
                     while(input != null) {
@@ -333,9 +331,6 @@ public class ChattingService extends Service {
                                                 channel.enableLights(true);
                                                 channel.setDescription("set");
 
-
-                                                //노티 ID를 개별 값으로, Channel ID 를 같게 해야 알림을 모두 확인할 수 있따.
-
                                                 assert manager != null;
                                                 manager.createNotificationChannel(channel);
 
@@ -349,7 +344,7 @@ public class ChattingService extends Service {
                                             n_intent.putExtra("room_auth",filt[4]);
 
                                             System.out.println("서비스에서 보냄  to AUTH : " + filt[2] + " AND  POST : "+ filt[3] + " AND " + filt[4]);
-                                            // 1, 2, 3번 어떤 알림을 선택해도 1번 채팅방으로 가버리는 문제 때문에 id는 currentTimeMillis 로 해준다.
+
 
                                             PendingIntent pending = PendingIntent.getActivity(ChattingService.this, (int) System.currentTimeMillis(),n_intent,  PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
                                             manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -388,7 +383,7 @@ public class ChattingService extends Service {
                                         n_intent.putExtra("room_auth",filt[4]);
 
                                         System.out.println("서비스에서 보냄  to AUTH : " + filt[2] + " AND  POST : "+ filt[3] + " AND " + filt[4]);
-                                        // 1, 2, 3번 어떤 알림을 선택해도 1번 채팅방으로 가버리는 문제 때문에 id는 currentTimeMillis 로 해준다.
+
 
                                         PendingIntent pending = PendingIntent.getActivity(ChattingService.this, (int) System.currentTimeMillis(),n_intent,  PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
                                         manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -411,13 +406,12 @@ public class ChattingService extends Service {
                                             channel.setDescription("set");
 
 
-                                            //노티 ID를 개별 값으로, Channel ID 를 같게 해야 알림을 모두 확인할 수 있따.
+                                            //노티 ID를 개별 값으로, Channel ID 를 같게 해야 알림을 모두 확인할 수 있음.
 
                                             assert manager != null;
                                             manager.createNotificationChannel(channel);
 
                                             manager.notify(id,builder.build());
-//                                    startForeground(1234,builder.build());
                                             id++;
                                         }
                                     }
@@ -531,10 +525,6 @@ public class ChattingService extends Service {
         Toast.makeText(this, "서비스 뒤짐ㅋㅋ", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent("restartService");
         sendBroadcast(intent);
-        System.out.println("broad 인텐트 보냄");
-        System.out.println("서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐서비스 뒤짐");
-
-
 
         unregisterReceiver(broadcastReceiver);
         dup = false;
