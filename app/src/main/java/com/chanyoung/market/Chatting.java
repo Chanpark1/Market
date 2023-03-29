@@ -111,7 +111,7 @@ public class Chatting extends AppCompatActivity {
 
     private Handler mHandler;
     Socket socket;
-    public static final String IP = "192.168.219.174";
+    public static final String IP = "192.168.219.102";
     public static final int PORT = 4462;
     String read;
     String sendmsg;
@@ -277,7 +277,7 @@ public class Chatting extends AppCompatActivity {
 //        1) 접속할 포트와 소켓을 열어준다.  ( 무한 반복 )
 //        2) 접속한 소캣의 정보를 저장해둔다.
 //        3) 저장 한 소캣의 입력 출력 스트림을 열어준다   ( 위의 무한 반복 안에 생성 )
-//        ( 메세지 송 수신 관련 스트림입니다.  DataInputStream 과 DataOutputStream 를 사용합니다.    다른것도 사용할 수 있습니다.  )
+//         메세지 송 수신 관련 스트림.  DataInputStream 과 DataOutputStream 를 사용
 //        4) 메세지를 수신할 스레드를 작성한다.
 //        5) 수신한 메세지를 처리하는 로직을 짠다  ( ex 방나누기  1:1 채팅 그룹채팅 등을 구분할수 있는 구분자들 )
 //        6) 보내고 싶은 상대방 쪽 스트림에다가 데이터를 전송한다.
@@ -343,22 +343,6 @@ public class Chatting extends AppCompatActivity {
                     }
                 }.start();
 
-
-            }
-        });
-
-        load_image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(!hasCamPerm || !hasWritePerm) {
-                    ActivityCompat.requestPermissions(Chatting.this,new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                }
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setType("image/*");
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent,777);
 
             }
         });

@@ -107,6 +107,7 @@ public class signup extends AppCompatActivity {
                         public void onResponse(Call<String> call, Response<String> response) {
                             if(response.isSuccessful()) {
                                 String result = response.body();
+                                System.out.println("인증번호 : " + response.body());
 
 
                                 start.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +134,7 @@ public class signup extends AppCompatActivity {
                                             call1.enqueue(new Callback<String>() {
                                                 @Override
                                                 public void onResponse(Call<String> call, Response<String> response) {
-                                                    if(response.isSuccessful()) {
+                                                    if(response.isSuccessful() && response.body() != null) {
                                                        if(response.body().equals("O")) {
                                                             Toast.makeText(signup.this, "가입된 정보가 없습니다.", Toast.LENGTH_SHORT).show();
                                                             System.out.println(response.body());
