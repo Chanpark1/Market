@@ -151,7 +151,6 @@ public class Chatting extends AppCompatActivity {
         post_image = (ImageView) findViewById(R.id.chatting_post_image);
         recyclerView = (RecyclerView) findViewById(R.id.chatting_rv_field);
 
-        load_image = (ImageButton) findViewById(R.id.chatting_load_image);
         input_message = (EditText) findViewById(R.id.chatting_input_message);
         send = (Button) findViewById(R.id.chatting_send_btn);
 
@@ -188,11 +187,9 @@ public class Chatting extends AppCompatActivity {
             });
 
 
-            System.out.println("받은값임 toAUTH : " + to_authNum+ "\n" +" post_AUTH : " +post_authNum+ "\n"+ "room AUTH : " +room_auth);
+            System.out.println("받은값 toAUTH : " + to_authNum+ "\n" +" post_AUTH : " +post_authNum+ "\n"+ "room AUTH : " +room_auth);
 
 //            tv_username.setText(userName);
-        } else {
-            System.out.println("데이터 없음 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ");
         }
 
         Call<List<Message>> call = retrofit_chatting.load_message(getAuthNum(),to_authNum, room_auth,post_authNum);

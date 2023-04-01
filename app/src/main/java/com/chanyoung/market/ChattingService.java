@@ -215,46 +215,6 @@ public class ChattingService extends Service {
                             ComponentName componentName = null;
                             String Activity = null;
                             if(filt[0].equals(my_authNum)) {
-                                if (filt[1].equals("image")) {
-                                    int count = Integer.parseInt(filt[3]);
-
-                                    for (int i = 0; i < count; i++) {
-                                        data = read;
-                                        sendMessage(data);
-                                    }
-                                    Intent n_intent = new Intent(ChattingService.this, Chatting.class);
-                                    PendingIntent pending = PendingIntent.getActivity(ChattingService.this, (int) System.currentTimeMillis(),n_intent,  PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-                                    manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                                    NotificationCompat.Builder builder =
-                                            new NotificationCompat.Builder(ChattingService.this,"noti")
-                                                    .setSmallIcon(R.drawable.ic_baseline_account_circle_24)
-                                                    .setPriority(NotificationCompat.PRIORITY_HIGH)
-                                                    .setContentTitle("채팅 알림")
-                                                    .setContentIntent(pending)
-                                                    .setContentText("사진")
-                                                    .setDefaults(NotificationCompat.DEFAULT_SOUND | NotificationCompat.DEFAULT_VIBRATE)
-                                                    .setAutoCancel(true);
-
-
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                                        NotificationChannel channel = new NotificationChannel("noti","chat",NotificationManager.IMPORTANCE_HIGH);
-
-                                        channel.enableVibration(true);
-                                        channel.enableLights(true);
-                                        channel.setDescription("set");
-
-                                        //노티 ID를 개별 값으로, Channel ID 를 같게 해야 알림을 모두 확인할 수 있따.
-
-                                        assert manager != null;
-                                        manager.createNotificationChannel(channel);
-
-                                        manager.notify(id,builder.build());
-//                                    startForeground(1234,builder.build());
-                                        id++;
-                                    }
-
-                                } else {
-
                                     data = read;
                                     sendMessage(data);
 
@@ -415,7 +375,7 @@ public class ChattingService extends Service {
                                             id++;
                                         }
                                     }
-                                }
+
 
 
 
